@@ -41,6 +41,8 @@ class BlogPostTemplate extends React.Component {
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
+              border: `2px solid`,
+              borderRadius: `5px`,
               marginBottom: rhythm(1),
             }}
           />
@@ -91,6 +93,8 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
+      html
+      timeToRead
       excerpt(pruneLength: 160)
       html
       frontmatter {

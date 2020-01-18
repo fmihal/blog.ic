@@ -1,3 +1,7 @@
-html {
-  background-color: rgb(248, 244, 244);
+body {
+  background-color: #292a2d;
+  color: #4caf50;
+}
+a {
+  text-decoration: none;
 }

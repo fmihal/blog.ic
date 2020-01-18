@@ -32,7 +32,7 @@ const Bio = () => {
     }
   `)
 
-  const { author, social } = data.site.siteMetadata
+  const { author } = data.site.siteMetadata
   return (
     <div
       style={{
@@ -54,10 +54,11 @@ const Bio = () => {
         }}
       />
       <p>
-        I write mostly about tech I learn, so I couldn't forget.
+        {" "}
+        I write mostly about tech stuff that I learn, so I don't forget them in
+        the future.
         {` `}
-        You could give me a clap, or follow me on
-        <a href={`https://twitter.com/${social.twitter}`}>{` `}Twitter.</a>
+        You could give me a 👏, or buy me a 🍺.
       </p>
     </div>
   )

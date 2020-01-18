@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import { rhythm, scale } from "../utils/typography"
+import { FaTwitter, FaGithub } from "react-icons/fa"
 
 class Layout extends React.Component {
   render() {
@@ -63,9 +63,14 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          <a href="/">twitter</a>
-          {` • `}
-          <a href="/">github</a>
+          <a href="https://twitter.com/unforced_error">
+            <FaTwitter />
+          </a>
+          {`   `}
+          <a href="https://github.com/fmihal">
+            {" "}
+            <FaGithub />
+          </a>
         </footer>
       </div>
     )
