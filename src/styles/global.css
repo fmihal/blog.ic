@@ -1,7 +1,12 @@
 body {
-  background-color: #292a2d;
-  color: #4caf50;
+  background-color: #34495e;
+  color: whitesmoke;
 }
+
+.global-link:hover {
+  color: rgba(248, 113, 214, 0.699);
+}
+
 a {
   text-decoration: none;
 }

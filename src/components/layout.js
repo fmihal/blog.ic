@@ -63,11 +63,11 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          <a href="https://twitter.com/unforced_error">
+          <a className="global-link" href="https://twitter.com/unforced_error">
             <FaTwitter />
           </a>
           {`   `}
-          <a href="https://github.com/fmihal">
+          <a className="global-link" href="https://github.com/fmihal">
             {" "}
             <FaGithub />
           </a>
