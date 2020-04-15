@@ -55,10 +55,13 @@ const Bio = () => {
       />
       <p>
         {" "}
-        I write mostly about tech stuff that I learn, so I don't forget them in
-        the future.
+        My personal tech notes.
         {` `}
-        You could give me a 👏, or buy me a 🍺.
+        You can ping me on my{" "}
+        <a href="https://twitter.com/unforced_error">Twitter</a> or send me an{" "}
+        <a href="mailto:mihalic1989@gmail.com">email.</a>
+        <br></br>
+        If you realy want to...
       </p>
     </div>
   )

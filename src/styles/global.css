@@ -1,12 +1,13 @@
 body {
-  background-color: #34495e;
+  background-color: #070c11;
   color: whitesmoke;
 }
 
-.global-link:hover {
+.global-link:hover,
+a:hover {
   color: rgba(248, 113, 214, 0.699);
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
 }
