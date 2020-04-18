@@ -1,6 +1,12 @@
 import React from "react"
+import Heatmap from "./heatmap/heatmap"
 import "./styles.css"
 
-export default () => {
-  return <div className="sidebar-container">This is sidebar...</div>
+export default ({ githubData }) => {
+  console.log(githubData)
+  return (
+    <div className="sidebar-container">
+      <Heatmap githubData={githubData} />
+    </div>
+  )
 }

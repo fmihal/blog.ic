@@ -1,6 +1,10 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
-    title: `() => null`,
+    title: `() => null;`,
     author: `Filip M`,
     description: `I write mostly about tech stuff that I learn, so I don't forget them in the future`,
     siteUrl: `https://github.com/fmihal`,
@@ -63,7 +67,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/profile-pic.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -71,6 +75,36 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-source-github-api`,
+      options: {
+        token: `${process.env.GITHUB_API_TOKEN}`,
+        variables: {},
+        graphQLQuery: `
+        query {
+            user(login: "fmihal") {
+              name
+              contributionsCollection {
+                contributionCalendar {
+                  colors
+                  totalContributions
+                  weeks {
+                    contributionDays {
+                      color
+                      contributionCount
+                      date
+                      weekday
+                    }
+                    firstDay
+                  }
+                }
+              }
+            }
+          }
+          
+        `,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
