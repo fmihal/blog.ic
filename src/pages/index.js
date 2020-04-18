@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import SidebarContainer from "../components/sidebar/"
 import { rhythm } from "../utils/typography"
 
 class BlogIndex extends React.Component {
@@ -11,11 +12,14 @@ class BlogIndex extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
+    const githubData =
+      data.githubData.data.user.contributionsCollection.contributionCalendar
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <Bio />
+        <SidebarContainer githubData={githubData} />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -78,6 +82,24 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+          }
+        }
+      }
+    }
+    githubData {
+      data {
+        user {
+          contributionsCollection {
+            contributionCalendar {
+              totalContributions
+              weeks {
+                contributionDays {
+                  color
+                  contributionCount
+                  date(difference: "", formatString: "", fromNow: false)
+                }
+              }
+            }
           }
         }
       }
