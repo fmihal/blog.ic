@@ -1,4 +1,3 @@
 # My personal tech notes
 ----------------------------------------------------
-
-Simple static site generated for writing about the things I work on. 
+Here I will write about things I'm researching and I'm working on. I've been busy lately, but I will update soon for sure.
